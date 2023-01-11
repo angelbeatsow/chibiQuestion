@@ -16,7 +16,7 @@
 <body>
   <h1>チビクエスチョン</h1>  
   <p>ログイン</p>
-  <form action="login.php" method="POST">
+  <form action="login.php" method="get">
     <input id="loginname" type="text" maxlength="6" placeholder="ニックネームを入力" required /><br>
     <input id="loginpass" type="password" maxlength="10" placeholder="パスワードを入力" required /><br>
     <input type="submit" id="loginButton" value="ログイン"></button>
@@ -24,7 +24,7 @@
   
   <br>
   <p>新規登録</p>
-  <form action="newgame.php" method="POST">
+  <form action="newgame.php" method="get">
       <input id="newname" type="text" maxlength="6" placeholder="ニックネームを入力" required /><br>
       <input id="newpass" type="password" placeholder="パスワードを入力" required /><br>
       <input type="submit" id="newgameButton" value="新規登録"></button>
