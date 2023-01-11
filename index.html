@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>チビクエスチョン</title>
+  
+  <!-- HTML -->
+  
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <h1>チビクエスチョン</h1>  
+  <p>ログイン</p>
+  <form action="login.php" method="POST">
+    <input id="loginname" type="text" maxlength="6" placeholder="ニックネームを入力" required /><br>
+    <input id="loginpass" type="password" maxlength="10" placeholder="パスワードを入力" required /><br>
+    <input type="submit" id="loginButton" value="ログイン"></button>
+  </form>
+  
+  <br>
+  <form action="newgame.php" method="POST">
+  <p>新規登録</p>
+      <input id="newname" type="text" maxlength="6" placeholder="ニックネームを入力" required /><br>
+      <input id="newpass" type="password" placeholder="パスワードを入力" required /><br>
+      <input type="submit" id="newgameButton" value="新規登録"></button>
+  </form>
+
+
+  
+  <!-- Project -->
+  
+  <script src="main.js"></script>
+  <script type="text/javascript">
+  
+  
+    let userId = 0;
+    
+    function $(aiueo){
+      return document.getElementById(aiueo);
+    }
+    
+    async function sha256(text) {
+      const uint8 = new TextEncoder().encode(text)
+      const digest = await crypto.subtle.digest('SHA-256', uint8)
+      return Array.from(new Uint8Array(digest)).map(v => v.toString(16).padStart(2, '0')).join('')
+    }
+    
+    
+  
+    
+    function newgame() {
+      let name = document.getElementById('newname').value;
+      let pass = document.getElementById('newpass').value;
+      
+      if(name.length > 6){
+      alert('文字数が6文字を超えています');
+      return;
+      }
+      
+      let nameDate = require('username.json');
+      nameDate = JSON.parse(nameDate);
+      if(name in nameDate){
+        alert('そのニックネームは登録済みです。');
+        return;
+        
+      }else{
+        
+        
+      }
+    }
+    
+  
+    
+    function login(){
+      console.log('login event');
+      let add = document.getElementById('email1').value;
+      let pass = document.getElementById('password1').value;
+      firebace.auth().signInWithEmailAndPassword(add, pass)
+        .then((userCredential) => {
+          //ログインが成功した時の処理
+          console.log('login success');
+        })
+        .catch((error) => {
+          console.log(error.code);
+          alert('ログインに失敗しました。');
+        });
+    }
+    
+    
+    
+  </script>
+
+</body>
+</html>
