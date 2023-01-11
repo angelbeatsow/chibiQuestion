@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang='ja'>
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-</head>
-  <body>
 <?php
 $name = $_POST["loginname"];
 $pass = $_POST["loginpass"];
@@ -44,5 +37,3 @@ $namedate3 = json_decode($namedate2,true);
 
 
 ?>
-</body>
-</html>
