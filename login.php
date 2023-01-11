@@ -1,7 +1,7 @@
 
 <?php
-$name = $_POST["loginname"];
-$pass = $_POST["loginpass"];
+$name = $_GET["loginname"];
+$pass = $_GET["loginpass"];
 $namedate = file_get_contents("username.json");
 $namedate2 = mb_convert_encoding($namedate, 'UTF8', 'ASCII,JIS,UTF-8,EUC-JP,SJIS-WIN');
 $namedate3 = json_decode($namedate2,true);
